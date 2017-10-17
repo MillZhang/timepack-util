@@ -1,22 +1,21 @@
 {
   "name": "timepack-util",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "a util page from timepack.cn",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MillZhang/timepack-util.git"
   },
   "keywords": [
-    "util.js"
+    "javascript", "util"
   ],
   "author": "millzhang",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/MillZhang/timepack-util/issues"
   },
-  "homepage": "https://github.com/MillZhang/timepack-util#readme"
+  "homepage": "https://github.com/MillZhang/timepack-util#readme",
+  "devDependencies": {}
 }
