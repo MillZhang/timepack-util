@@ -92,7 +92,7 @@ var TimepackUtil = (function(u) {
      * 浏览器判断
      * @type {Object}
      */
-    u.brower = {
+    u.browser = {
         isIE: function() {
             return /msie/.test(navigator.userAgent.toLowerCase()) || /rv:([\d.]+)\) like gecko/.test(navigator.userAgent.toLowerCase());
         },
@@ -155,7 +155,7 @@ var TimepackUtil = (function(u) {
             runtimes: 'html5,flash,html4',
             browse_button: param.buttonId,
             uptoken: param.uptoken,
-            domain: this.domain, //TODO
+            domain: undefined == param.domain ? this.constant.domain : param.domain,
             get_new_uptoken: false,
             max_file_size: '100mb', //没有会导致微信端614错误
             max_retries: 3,
