@@ -2,7 +2,7 @@
  * Timepack Util package
  * @author MillZhang
  * @date 2017-10-17 13:58:23
- * @version 1.0.2
+ * @version 1.0.3
  */
 var TimepackUtil = (function(u) {
 
