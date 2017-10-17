@@ -177,7 +177,7 @@ var TimepackUtil = (function(u) {
                 }],
                 max_file_size: undefined == param.size ? '4mb' : param.size
             },
-            log_level: undefined == param.log ? 1 : param.log,
+            log_level: undefined == param.logLevel ? 1 : param.logLevel,
             init: {
                 'FilesAdded': function(up, files) {
                     if (undefined != callback.added) {
