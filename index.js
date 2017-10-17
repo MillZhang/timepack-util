@@ -2,8 +2,11 @@
  * Timepack Util package
  * @author MillZhang
  * @date 2017-10-17 13:58:23
- * @version 1.0.4
+ * @version 1.0.5
  */
+import moxie from './qiniu/moxie.js'
+import plupload from './qiniu/plupload.full.min.js'
+import qiniu from './qiniu/qiniu.js'
 var TimepackUtil = (function(u) {
 
     Array.prototype.remove = function(val) {
