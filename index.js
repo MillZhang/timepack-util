@@ -2,7 +2,7 @@
  * Timepack Util package
  * @author MillZhang
  * @date 2017-10-17 13:58:23
- * @version 1.0.5
+ * @version 1.0.6
  */
 import moxie from './qiniu/moxie.js'
 import plupload from './qiniu/plupload.full.min.js'
@@ -177,7 +177,7 @@ var TimepackUtil = (function(u) {
                 }],
                 max_file_size: undefined == param.size ? '4mb' : param.size
             },
-            log_level: 1,
+            log_level: undefined == param.log ? 1 : param.log,
             init: {
                 'FilesAdded': function(up, files) {
                     if (undefined != callback.added) {
