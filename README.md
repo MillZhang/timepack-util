@@ -36,7 +36,7 @@ fileUploader(param,callback)| No Return| upload a file to server through qiniu
 #### `fileUploader` method statement
 
 param | default|required
----|---|---|--
+---|---|---
 fileType | image|false
 buttonId | null | true
 uptoken  | null | true
@@ -45,11 +45,11 @@ size     | 4mb  |false
 
 
 
-callback | header 2
----|---
-added | row 1 col 2
-progress | row 2 col 2
-complete|
-uploaded|
-error|
+callback | description | required
+---|--- | ---
+added | trigger when files have been added | false
+progress | trigger when a file were uploading | false
+complete| trigger when a file uploading event completed | false
+uploaded| trigger when a file uploading successfully | true
+error| trigger when a file uploading event came across an error | false
 

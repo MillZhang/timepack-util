@@ -2,7 +2,7 @@
  * Timepack Util package
  * @author MillZhang
  * @date 2017-10-17 13:58:23
- * @version 1.0.3
+ * @version 1.0.4
  */
 var TimepackUtil = (function(u) {
 
@@ -145,6 +145,9 @@ var TimepackUtil = (function(u) {
      * @return {[type]}            [description]
      */
     u.fileUploader = function(param, callback) {
+        if (undefined == Qiniu) console.error(`请引入七牛组件`);
+        return;
+
         let exension = "jpg,png,jpeg";
         if (undefined == param.fileType || param.fileType == 'image') {
             //do nothing
