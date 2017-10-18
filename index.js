@@ -2,7 +2,7 @@
  * Timepack Util package
  * @author MillZhang
  * @date 2017-10-17 13:58:23
- * @version 1.0.6
+ * @version 1.0.7
  */
 import moxie from './qiniu/moxie.js'
 import plupload from './qiniu/plupload.full.min.js'
@@ -148,8 +148,10 @@ var TimepackUtil = (function(u) {
      * @return {[type]}            [description]
      */
     u.fileUploader = function(param, callback) {
-        if (undefined == Qiniu) console.error(`请引入七牛组件`);
-        return;
+        if (undefined == Qiniu) {
+            console.error(`请引入七牛组件`);
+            return;
+        }
 
         let exension = "jpg,png,jpeg";
         if (undefined == param.fileType || param.fileType == 'image') {
@@ -161,7 +163,7 @@ var TimepackUtil = (function(u) {
             runtimes: 'html5,flash,html4',
             browse_button: param.buttonId,
             uptoken: param.uptoken,
-            domain: undefined == param.domain ? this.constant.domain : param.domain,
+            domain: undefined == param.domain ? this.constant.DOMAIN : param.domain,
             get_new_uptoken: false,
             max_file_size: '100mb', //没有会导致微信端614错误
             max_retries: 3,
