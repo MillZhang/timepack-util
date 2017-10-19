@@ -2,14 +2,15 @@
  * Timepack Util package
  * @author MillZhang
  * @date 2017-10-17 13:58:23
- * @version 1.1.0
+ * @version 1.1.1
  */
 import moxie from './qiniu/moxie.js'
 import plupload from './qiniu/plupload.full.min.js'
 import qiniu from './qiniu/qiniu.js'
-export default new class TimepackUtil {
+class TimepackUtil {
     constructor() {
-
+        this.name = "timepack-util";
+        this.version = '1.1.1';
     }
 
     /**
@@ -158,3 +159,5 @@ Array.prototype.indexOf = function(val) {
     }
     return -1;
 };
+
+export default new TimepackUtil;

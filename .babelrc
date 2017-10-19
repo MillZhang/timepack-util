@@ -1,7 +1,6 @@
 {
-  "stage": 0,
-  "loose": ["all"],
-  "blacklist": ["regenerator"],
-  "optional": ["bluebirdCoroutines"],
-  "highlightCode":true
+    "presets": [
+        "es2015",
+    ],
+    "plugins": []
 }
