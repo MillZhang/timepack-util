@@ -11,6 +11,11 @@ class TimepackUtil {
     constructor() {
         this.name = "timepack-util";
         this.version = '1.1.1';
+        this.constant = {
+            DOMAIN: 'https://images.cache.timepack.cn/',
+            TEMPLATE_DOMAIN: 'http://template.cache.timepack.cn/',
+            THUMB600: '?imageMogr2/thumbnail/600x600'
+        }
     }
 
     /**

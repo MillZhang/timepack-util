@@ -1,6 +1,6 @@
 {
   "name": "timepack-util",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A timepack.cn javascript util page to work with ES6 using Babel",
   "main": "lib/index.js",
   "scripts": {
@@ -29,6 +29,7 @@
     "chai": "^4.1.2",
     "expect": "^21.2.1",
     "mocha": "^2.5.3",
+    "qiniu-js": "^1.0.22",
     "should": "^6.0.3"
   }
 }
