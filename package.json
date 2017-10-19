@@ -1,6 +1,6 @@
 {
   "name": "timepack-util",
-  "version": "1.1.2",
+  "version": "1.1.4",
   "description": "A timepack.cn javascript util page to work with ES6 using Babel",
   "main": "lib/index.js",
   "scripts": {

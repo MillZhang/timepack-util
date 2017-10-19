@@ -2,15 +2,13 @@
  * Timepack Util package
  * @author MillZhang
  * @date 2017-10-17 13:58:23
- * @version 1.1.1
+ * @version 1.1.4
  */
-import moxie from './qiniu/moxie.js'
-import plupload from './qiniu/plupload.full.min.js'
-import qiniu from './qiniu/qiniu.js'
 class TimepackUtil {
     constructor() {
+        console.warn(`如需使用fileUploader方法,请先导入qiniu上传组件;`)
         this.name = "timepack-util";
-        this.version = '1.1.1';
+        this.version = '1.1.4';
         this.constant = {
             DOMAIN: 'https://images.cache.timepack.cn/',
             TEMPLATE_DOMAIN: 'http://template.cache.timepack.cn/',
@@ -65,14 +63,77 @@ class TimepackUtil {
     }
 
     /**
-     * 根据数组下标删除数组项
-     * @param  {[Array]} array [原数组]
-     * @param  {[Number]} index [待删除项下标]
-     * @return {[Array]}       [新数组]
+     * 数组常用方法
+     * @return {[type]} [description]
      */
-    removeArrayItem(array, index) {
-        array.remove(array[index]);
-        return array;
+    array() {
+        return {
+            /**
+             * 根据数组下标删除数组项
+             * @param  {[Array]} array [原数组]
+             * @param  {[Number]} index [待删除项下标]
+             * @return {[Array]}       [新数组]
+             */
+            remove(array, index) {
+                array.remove(array[index]);
+                return array;
+            }
+        }
+    }
+
+    /**
+     * 字符串操作常用方法
+     * @return {[type]} [description]
+     */
+    string() {
+        return {
+            trim(str) {
+                return str.replace(/^(\s|\xA0)+|(\s|\xA0)+$/g, '');
+            },
+            isEmpty(str) {
+                return (!str || 0 === str.length);
+            },
+            isNotEmpty(str) {
+                return !this.isEmpty(str);
+            },
+            isBlank(str) {
+                return (!str || 0 === this.trim(str).length);
+            },
+            isNotBlank(str) {
+                return !this.isBlank(str);
+            }
+        }
+    }
+
+    /**
+     * 浏览器判断
+     * @return {[type]} [description]
+     */
+    browser() {
+        return {
+            isIE() {
+                return /msie/.test(navigator.userAgent.toLowerCase()) || /rv:([\d.]+)\) like gecko/.test(navigator.userAgent.toLowerCase());
+            },
+            isFirefox() {
+                return /firefox/.test(navigator.userAgent.toLowerCase());
+            },
+            isChrome() {
+                return /chrome/.test(navigator.userAgent.toLowerCase());
+            },
+            isAndroid() {
+                let u = navigator.userAgent;
+                return u.indexOf('Android') > -1 || u.indexOf('Linux') > -1;
+            },
+            isIOS() {
+                let u = navigator.userAgent;
+                return !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+            },
+            isWeixin() {
+                let u = navigator.userAgent;
+                return u.match(/MicroMessenger/i).toLowerCase() == 'micromessenger';
+            }
+        }
+
     }
 
     /**
