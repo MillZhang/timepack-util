@@ -2,13 +2,13 @@
  * Timepack Util package
  * @author MillZhang
  * @date 2017-10-17 13:58:23
- * @version 1.1.4
+ * @version 1.1.5
  */
 class TimepackUtil {
     constructor() {
         console.warn(`如需使用fileUploader方法,请先导入qiniu上传组件;`)
         this.name = "timepack-util";
-        this.version = '1.1.4';
+        this.version = '1.1.5';
         this.constant = {
             DOMAIN: 'https://images.cache.timepack.cn/',
             TEMPLATE_DOMAIN: 'http://template.cache.timepack.cn/',
@@ -143,12 +143,6 @@ class TimepackUtil {
      * @return {[type]}            [description]
      */
     fileUploader(param, callback) {
-        let exension = "jpg,png,jpeg";
-        if (undefined == param.fileType || param.fileType == 'image') {
-            //do nothing
-        } else if (param.fileType == 'excel') {
-            exension = 'xls,xlsx';
-        }
         Qiniu.uploader({
             runtimes: 'html5,flash,html4',
             browse_button: param.buttonId,
@@ -165,7 +159,7 @@ class TimepackUtil {
             filters: {
                 mime_types: [{
                     title: "Image files",
-                    extensions: exension
+                    extensions: undefined == param.fileType ? 'jpg,png,jpeg' : param.fileType
                 }],
                 max_file_size: undefined == param.size ? '4mb' : param.size
             },
